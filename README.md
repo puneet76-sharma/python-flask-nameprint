@@ -67,6 +67,7 @@ RUN pip3 --no-cache-dir install --upgrade pip
 RUN apt-get install -y vim
 RUN rm -rf /var/lib/apt/lists/*
 RUN pip3 install flask
+RUN /app
 COPY . .
 EXPOSE 5000
 ENTRYPOINT FLASK_APP=/app/app.py flask run --host=0.0.0.0
